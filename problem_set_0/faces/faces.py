@@ -1,21 +1,35 @@
-message = input()
-li = message.split()
+def main():
 
-def change_to_emoji(list):
-	print(list)
-	if ":)" in list:
-		idx = list.index(":)")
-		list[idx] = "\U0001F642"
+	message = input()
+	string = message.split()
+	print(change_to_emoji(string))
 
-		if ":(" in list:
-			idx = list.index(":(")
-			list[idx] = "\U0001F641"
 
-	elif ":(" in list:
-		idx = list.index(":(")
-		list[idx] = "\U0001F641"
+def change_to_emoji(string):
+	""" change a simple :) or :( to an emoji
+	
+	args:
+		string: string passed from user input to process
 
-	new_string = " ".join(list)
-	print(new_string)
+	return:
+		a new string
+	"""
+	if ":)" in string:
+		idx = string.index(":)")
+		string[idx] = "\U0001F642"
 
-change_to_emoji(li)
+		if ":(" in string:
+			idx = string.index(":(")
+			string[idx] = "\U0001F641"
+
+	elif ":(" in string:
+		idx = string.index(":(")
+		string[idx] = "\U0001F641"
+
+	new_string = " ".join(string)
+
+	return new_string
+
+
+if __name__ == "__main__":
+	main()

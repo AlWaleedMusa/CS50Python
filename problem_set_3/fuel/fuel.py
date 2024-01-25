@@ -1,28 +1,32 @@
-import math
-while True:
-	try:
-		user_input = input("Fraction: ").strip().split("/")
+def main():
 
-		x = int(user_input[0])
-		y = int(user_input[1])
+	while True:
+		try:
+			user_input = input("Fraction: ").strip().split("/")
 
-		if y == x:
-			print("F")
-			break
-		if x < y and y != 0:
-			r = int(round((x/y) * 100))
+			x = int(user_input[0])
+			y = int(user_input[1])
 
-			if r <= 1:
-				print("E")
-				break
-			elif r >= 99:
+			if y == x:
 				print("F")
 				break
-			else:
-				print("{}%".format(r))
-				break
+			if x < y and y != 0:
+				r = int(round((x/y) * 100))
 
-	except ValueError:
-		pass
-	except ZeroDivisionError:
-		pass
+				if r <= 1:
+					print("E")
+					break
+				elif r >= 99:
+					print("F")
+					break
+				else:
+					print("{}%".format(r))
+					break
+
+		except ValueError:
+			pass
+		except ZeroDivisionError:
+			pass
+
+if __name__ == "__main__":
+	main()
